@@ -9,4 +9,12 @@ $(document).ready(function(){
     $("ul#dog").append("<li>Woof! Dogs rule!</li><br>");
   });
 
+  $("h2#dogphoto").click(function(){
+    $("ul#dog").append("<img src='https://placekitten.com/300/200'>");
+    $("ul#dog").children("img").last().click(function(){
+      $(this).remove();
+    });
+  });
+
+
 });
