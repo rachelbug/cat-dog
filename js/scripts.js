@@ -1,20 +1,21 @@
 $(document).ready(function(){
-  $("button#cat-btn").click(function() {
-    $("ul#cat").append("<li>Meow! I am the queen of the animal kingdom!</li><br>");
-    $("ul#dog").append("<br><li>Woof! I tire of your lies!</li>");
+  $("#blanks form").submit(function(event) {
+    var person1Input = $("input#person1").val();
+    var person2Input = $("input#person2").val();
+    var animalInput= $("input#animal").val();
+    var exclamationInput = $("input#exclamation").val();
+    var verbInput = $("input#verb").val();
+    var nounInput = $("input#noun").val();
+
+    $(".person1").text(person1Input);
+    $(".person2").text(person2Input);
+    $(".animal").text(animalInput);
+    $(".exclamation").text(exclamationInput);
+    $(".verb").text(verbInput);
+    $(".noun").text(nounInput);
+
+    $("#story").show();
+
+    event.preventDefault();
   });
-
-  $("button#dog-btn").click(function() {
-    $("ul#cat").append("<br><li>Meow! Dogs suck!</li>");
-    $("ul#dog").append("<li>Woof! Dogs rule!</li><br>");
-  });
-
-  $("h2#dogphoto").click(function(){
-    $("ul#dog").append("<img src='https://placekitten.com/300/200'>");
-    $("ul#dog").children("img").last().click(function(){
-      $(this).remove();
-    });
-  });
-
-
 });
